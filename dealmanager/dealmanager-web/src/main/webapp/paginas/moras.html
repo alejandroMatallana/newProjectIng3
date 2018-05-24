@@ -1,0 +1,42 @@
+	<div class=container ng-controller="controladorMora">
+	
+	<br><br><br><br>
+	<table class="table">
+			<thead>
+				<tr>
+					<th><th/>
+					<th>DEUDA</th>
+					<th>CEDULA</th>
+					<th>NOMBRE</th>
+					<th>TELEFONO</th>
+					<th>CORREO</th>
+					<th>DIAS MORA</th>
+					<th>MONTO</th>
+					<th>ESTADO</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="l in deudores">
+				        <td><input name="selecionCedula" type="radio" ng-click="variable(l.deuda.cliente.cedula)" /><td/>
+						<td>{{l.deuda.codigo}}</td>
+						<td>{{l.deuda.cliente.cedula}}</td>
+						<td>{{l.deuda.cliente.nombre}}</td>
+						<td>{{l.deuda.cliente.telefono}}</td>
+						<td>{{l.deuda.cliente.correo}}</td>
+						<td>{{l.dias}}</td>
+						<td>{{l.deuda.valor}}</td>
+						<td>{{l.estado}}</td>
+					</tr>
+				
+			</tbody>
+		</table>
+
+		<br><br><br><br>
+		
+		<center>
+		<button type="button" class="btn btn-primary btn-lg" ng-click="abrirCompromiso()">Agregar Compromiso</button>
+		</center>
+		
+	
+
+</div>

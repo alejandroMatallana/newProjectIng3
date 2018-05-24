@@ -1,0 +1,87 @@
+<div class="container" ng-controller="busquedaAvanzadaController">
+
+	<br> <br> <br> <label class="radio-inline"> <input
+		type="radio" name="optradio" ng-click="buscarVencenHoy()">Compromisos que vencen
+		hoy
+	</label> <label class="radio-inline"> <input type="radio"
+		name="optradio" ng-click="buscarPorTipo()">Por tipo compromiso
+	</label> <label class="radio-inline"> <input type="radio"
+		name="optradio" ng-click="buscarPorDiasMora()">Compromisos por dias de
+		mora
+	</label> <label class="radio-inline"> <input type="radio"
+		name="optradio" ng-click="buscarPorFecha()">Por fecha compromiso
+	</label> <label class="radio-inline"> <input type="radio"
+		name="optradio" ng-click="buscarPorCedula()">Por cedula
+	</label>
+
+	<button type="button" class="btn btn-primary btn-md"
+		ng-click="busquedaAvanzada()">Buscar</button>
+	<br> <br>
+
+	<div class="ng-hide" ng-show="estado.tipo">
+		<label for="sel1">Seleccione un tipo</label> <select
+			class="form-control" id="sel1" ng-model="tipo">
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+			<option>6</option>
+			<option>7</option>
+			<option>8</option>
+			<option>9</option>
+		</select>
+	</div>
+
+	<div ng-show="estado.diasMora" class="ng-hide">
+		<label for="num">Dias en mora</label> <input type="number"
+			class="form-control" id="num" ng-model="dias">
+	</div>
+
+
+	<div class="ng-hide" ng-show="estado.fecha">
+		<label class="control-label" for="date">Fecha </label> <input
+			class="form-control" id="date" name="date" placeholder="DD/MM/YYYY"
+			type="date" ng-model="date" />
+	</div>
+
+	<div class="ng-hide" ng-show="estado.cedula">
+		<label for="ced">Cedula </label> <input type="number"
+			class="form-control" id="ced" ng-model="cedula">
+	</div>
+
+	<br> <br> <br> <br> <br>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>TIPO COMPROMISO</th>
+				<th>CEDULA</th>
+				<th>NOMBRE</th>
+				<th>TELEFONO</th>
+				<th>CORREO</th>
+				<th>DiAS MORA</th>
+				<th>MONTO</th>
+				<th>ESTADO</th>
+				<th>ACCION</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="c in compromisos">
+				<td>{{c.tipo}}</td>
+				<td>{{c.deuda.cliente.cedula}}</td>
+				<td>{{c.deuda.cliente.nombre}}</td>
+				<td>{{c.deuda.cliente.telefono}}</td>
+				<td>{{c.deuda.cliente.correo}}</td>
+				<td>{{c.diasM}}</td>
+				<td>{{c.deuda.valor}}</td>
+				<td>{{c.estado}}</td>
+				<td><button type="button" class="btn btn-primary btn-xs" ng-click="abrirCompromiso(c.deuda.cliente.cedula)">Crear
+						Compromiso</button></td>
+			</tr>
+
+		</tbody>
+	</table>
+
+
+
+</div>

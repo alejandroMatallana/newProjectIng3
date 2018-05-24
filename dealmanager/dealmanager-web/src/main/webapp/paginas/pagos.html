@@ -1,0 +1,67 @@
+<div class="row" ng-controller="ControladorPagPagos">
+	<center>
+		<div class="input-group">
+
+			<br>
+			<br>
+
+			<h4 id="basic-addon1">Cedula</h4>
+			<input type="number" class="form-control" name="cedula"
+				placeholder="cedula" aria-describedby="basic-addon1"
+				style="with: 200px;" ng-model="cedula">
+
+
+
+			<h4 id="basic-addon1">Codigo deuda</h4>
+			<input type="text" class="form-control" name="deuda"
+				placeholder="codigo" aria-describedby="basic-addon1"
+				style="with: 200px;" ng-model="codigo">
+<br><br>
+			<center>
+				<button type="button" name="action" class="btn btn-primary"
+					ng-click="listarPagos()">Buscar</button>
+			</center>
+
+			<h4 id="basic-addon1">Valor</h4>
+			<input type="text" class="form-control" name="valor"
+				placeholder="valor" aria-describedby="basic-addon1"
+				style="with: 200px;" ng-model="valor">
+
+			<h4 id="basic-addon1">Intereses</h4>
+			<input type="number" class="form-control" name="intereses"
+				aria-describedby="basic-addon1" style="with: 200px;"
+				ng-model="interes">
+
+		</div>
+	</center>
+	<br>
+	<br>
+	<center>
+		<button type="button" name="action" class="btn btn-primary"
+			ng-click="registrarPagos()">Guardar</button>
+			<button type="button" name="action" class="btn btn-primary"
+			ng-click="cancelar()">Cancelar</button>
+	</center>
+
+	<br>
+	<br>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>NOMBRE</th>
+				<th>FECHA</th>
+				<th>VALOR</th>
+				<th>INTERESES</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="p in pagos">
+				<td>{{p.cliente.nombre}}</td>
+				<td>{{p.fecha}}</td>
+				<td>{{p.valor}}</td>
+				<td>{{p.interes}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

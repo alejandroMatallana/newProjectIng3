@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:q="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/templates/default.xhtml">
+<head>
+<link id="template-file" href="/WEB-INF/templates/default.xhtml"
+	rel="default" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	
+
+<!-- Librerias de Angular -->
+<script type="text/javascript" src="resources/js/angular.min.js"></script>
+<script type="text/javascript" src="resources/js/angular-route.js"></script>
+
+<!-- Librerias Jquery necesarias para el bootstrap y el material design -->
+<script type="text/javascript" src="resources/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="resources/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="resources/js/material.min.js"></script>
+<script type="text/javascript" src="resources/js/ripples.min.js"></script>
+<script type="text/javascript"
+	src="https://cdn.jsdelivr.net/ngstorage/0.3.6/ngStorage.min.js"></script>
+<script type="text/javascript" src="controlador/app.js"></script>
+<script type="text/javascript" src="controlador/menuController.js"></script>
+<script type="text/javascript" src="controlador/pedidosController.js"></script>
+<script type="text/javascript" src="../controlador/clienteController.js"></script>
+
+
+
+</head>
+<body ng-app="miApp"
+	style="background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#cbccc8)) fixed;">
+	<div class="container">
+		<ul class="nav nav-pills">
+			<li><a href="#/pedidos">pedidos</a></li>
+			
+
+		</ul>
+		<div ng-view></div>
+	</div>
+</body>
+<script type="text/javascript">
+	$.material.init()
+</script>
+</html>

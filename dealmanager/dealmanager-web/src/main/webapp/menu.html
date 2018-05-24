@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:q="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/templates/default.xhtml">
+<head>
+<link id="template-file" href="/WEB-INF/templates/default.xhtml"
+	rel="default" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cartera Cooperativa Cafetera</title>
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+
+<!-- Librerias de Angular -->
+<script type="text/javascript" src="resources/js/angular.min.js"></script>
+<script type="text/javascript" src="resources/js/angular-route.js"></script>
+
+<!-- Librerias Jquery necesarias para el bootstrap y el material design -->
+<script type="text/javascript" src="resources/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="resources/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="resources/js/material.min.js"></script>
+<script type="text/javascript" src="resources/js/ripples.min.js"></script>
+<script type="text/javascript"
+	src="https://cdn.jsdelivr.net/ngstorage/0.3.6/ngStorage.min.js"></script>
+
+<script type="text/javascript" src="controlador/app.js"></script>
+<script type="text/javascript" src="controlador/ControladorPagPagos.js"></script>
+<script type="text/javascript" src="controlador/controladorMora.js"></script>
+<script type="text/javascript"
+	src="controlador/controladorCompromiso.js"></script>
+<script type="text/javascript"
+	src="controlador/busquedaAvanzadaController.js"></script>
+
+
+
+</head>
+<body ng-app="miApp"
+	style="background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#cbccc8)) fixed;">
+	<h1 align="center">Cooperativa Cafetera</h1>
+	<div class="container">
+		<ul class="nav nav-pills">
+
+			<li class="active"><a href="#/moras">Moras</a></li>
+			<li class="active"><a href="#/pagos">Pagos</a></li>
+			<li class="active"><a href="#/compromiso">Compromiso</a></li>
+			<li class="active"><a href="#/busquedaAvanzada">Busqueda Avanzada</a></li>
+
+
+		</ul>
+		<div ng-view></div>
+	</div>
+</body>
+<script type="text/javascript">
+	$.material.init()
+</script>
+</html>

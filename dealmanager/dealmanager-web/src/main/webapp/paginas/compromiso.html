@@ -1,0 +1,70 @@
+<div class="row" ng-controller="controladorCompromiso">
+<center>
+	<div class="input-group" >
+	
+<br><br>
+<div>
+			<h4 id="basic-addon1">Cedula</h4>
+			<input type="text" class="form-control" name="cedula"
+				placeholder="cedula" aria-describedby="basic-addon1"
+				style="with: 200px;" ng-model="cedula">
+				
+				<button type="button" name="action" class="btn btn-primary"
+			ng-click="listarCompromisosDeudor();">Buscar</button>
+			
+			</div>
+			
+			<h4 id="basic-addon1">Codigo de la Deuda</h4>
+			<input type="text" class="form-control" name="deuda"
+				aria-describedby="basic-addon1" style="with: 200px;"
+				ng-model="deuda">
+		
+			<h4 id="basic-addon1">Fecha Maxima</h4>
+			<input type="date" class="form-control" name="fecha"
+				placeholder="fecha maxima" aria-describedby="basic-addon1"
+				style="with: 200px;" ng-model="fecha">
+				
+		<h4 id="basic-addon1">Valor Total</h4>
+			<input type="text" class="form-control" name="valor"
+				placeholder="valor" aria-describedby="basic-addon1"
+				style="with: 200px;" ng-model="valor">
+			
+				<h4 id="basic-addon1">Descripcion</h4>
+			<textarea class="form-control" name="descripcion"
+				aria-describedby="basic-addon1" style="with: 200px;"
+				ng-model="descripcion"></textarea>
+		</div>
+		</center>
+		<br><br>
+		<center>
+		<button type="button" name="action" class="btn btn-primary"
+			ng-click="agregarCompromiso();">Guardar</button></center>
+			
+		<br><br>
+		
+		<table class="table">
+			<thead>
+				<tr>
+					<th>TIPO COMPROMISO</th>
+					<th>DEUDA</th>
+					<th>NOMBRE</th>
+					<th>ESTADO</th>
+					<th>MONTO</th>
+					<th>FECHA MAXIMA</th>
+					<th>DESCRIPCION</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="c in compromisos">
+						<td>{{c.tipo}}</td>
+						<td>{{c.deuda.codigo}}</td>
+						<td>{{c.deuda.cliente.nombre}}</td>
+						<td>{{c.estado}}</td>
+						<td>{{c.valor}}</td>
+						<td>{{c.fechaPagoMax}}</td>
+						<td>{{c.descripcion}}</td>
+						
+				</tr>
+			</tbody>
+		</table>
+</div>

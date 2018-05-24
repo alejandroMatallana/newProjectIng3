@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<h:head>
+	<!--   ENCABEZADO -->
+	<div id="slider">
+		<img src="../resources/images/slidebeaute.jpg" />
+	</div>
+</h:head>
+<body>
+	<style>
+.affaires .ui-menuitem-text {
+	color: #31353a;
+}
+</style>
+	<h:form>
+		<p:growl id="messages" />
+		<p:menubar style="background-color: #5e9af9 !important;"
+			rendered="#{SesionBean.ocultar}" styleClass="affaires">
+			<p:submenu label="Afiliados" icon="#">
+				<p:menuitem value="Registro" url="../paginas/afiliado.jsf" />
+			</p:submenu>
+
+			<p:submenu label="Pedidos" icon="#"
+				rendered="#{SesionBean.afiliadoUser}">
+				<p:menuitem value="Pedir" url="../paginas/pedido.jsf" icon="#" />
+				<p:menuitem value="Pendientes"
+					url="../paginas/pedidosPendientes.jsf" icon="#" />
+			</p:submenu>
+
+			<p:submenu label="Premios" icon="#">
+				<p:menuitem value="Registro" url="../paginas/premios.jsf" icon="#"
+					rendered="#{SesionBean.adminUser}" />
+				<p:separator />
+				<p:menuitem value="Ver premios" url="../paginas/vistaPremios.jsf"
+					icon="#" rendered="#{SesionBean.afiliadoUser}" />
+			</p:submenu>
+
+			<p:submenu label="Pagos" icon="#"
+				rendered="#{SesionBean.afiliadoUser}">
+				<p:menuitem value="Cuotas" url="../paginas/cuotas.jsf" icon="#" />
+			</p:submenu>
+
+			<p:submenu label="Productos" icon="#"
+				rendered="#{SesionBean.adminUser}">
+				<p:menuitem value="Registro" url="../paginas/producto.jsf" icon="#" />
+			</p:submenu>
+
+			<p:menuitem value="Ventas" url="../paginas/ventas.jsf" icon="#"
+				rendered="#{SesionBean.afiliadoUser}" />
+
+			<p:menuitem value="Historial de ventas"
+				rendered="#{SesionBean.afiliadoUser}"
+				url="../paginas/historialVentas.jsf" icon="#" />
+
+			<p:submenu label="Catalogo" icon="#"
+				rendered="#{SesionBean.adminUser}">
+				<p:menuitem value="Catalogo" url="../paginas/catalogo.jsf" icon="#" />
+				<p:separator />
+				<p:menuitem value="Producto Catalogo"
+					url="../paginas/catalogoProducto.jsf" icon="#" />
+				<p:separator />
+				<p:menuitem value="Promociones" url="../paginas/promocion.jsf"
+					icon="#" />
+			</p:submenu>
+
+			<p:submenu label="Mas" icon="#" >
+				<p:menuitem value="Informacion" url="../paginas/verPagos.jsf" />
+			</p:submenu>
+
+		</p:menubar>
+	</h:form>
+</body>
+</html>
